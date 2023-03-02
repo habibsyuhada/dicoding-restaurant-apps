@@ -5,7 +5,7 @@ const createRestaurantItemTemplate = (restaurant) => `
     <img class="post-item-thumbnail" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Gambar Restoran ${restaurant.name}">
     <div class="post-item-city">${restaurant.city}</div>
     <div class="post-item-content">
-      <h1 class="post-item-title"><a href="#">${restaurant.name}</a></h1>
+      <h1 class="post-item-title"><a href="/#/detail/${restaurant.id}">${restaurant.name}</a></h1>
       <p class="post-item-rating"><i class="fa-solid fa-star" aria-label="Rating"></i> ${restaurant.rating}</p>
       <p class="post-item-description">${restaurant.description}</p>
     </div>
@@ -17,7 +17,7 @@ const createFavoriteItemTemplate = (restaurant) => `
     <img class="favorite-item-thumbnail" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Gambar Restoran ${restaurant.name}">
     <div class="favorite-item-city">${restaurant.city}</div>
     <div class="favorite-item-content">
-      <h1 class="favorite-item-title"><a href="/#/detail/${movie.id}">${restaurant.name}</a></h1>
+      <h1 class="favorite-item-title"><a href="/#/detail/${restaurant.id}">${restaurant.name}</a></h1>
       <p class="favorite-item-rating"><i class="fa-solid fa-star" aria-label="Rating"></i> ${restaurant.rating}</p>
       <p class="favorite-item-description">${restaurant.description}</p>
     </div>
@@ -35,8 +35,17 @@ const createFaqItemTemplate = (faq, index) => `
   </li>
 `;
 
+const createRestaurantDetailTemplate = (restaurant) => `
+  <div class="detail">
+    <h1 class="detail-label">${restaurant.name}</h1>
+    <div id="detail" class="detail">
+    </div>
+  </div>
+`;
+
 export {
   createRestaurantItemTemplate,
   createFavoriteItemTemplate,
   createFaqItemTemplate,
+  createRestaurantDetailTemplate,
 };

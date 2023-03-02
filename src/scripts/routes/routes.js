@@ -1,10 +1,10 @@
 import Home from '../views/pages/home';
-// import Detail from '../views/pages/detail';
+import Detail from '../views/pages/detail';
 
 const routes = {
   '/': Home, // default page
   '/home': Home, // default page
-  // '/detail/:id': Detail,
+  '/detail/:id': Detail,
 };
 
 export default routes;
