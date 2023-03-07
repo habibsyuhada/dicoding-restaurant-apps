@@ -35,13 +35,44 @@ const createFaqItemTemplate = (faq, index) => `
   </li>
 `;
 
-const createRestaurantDetailTemplate = (restaurant) => `
-  <div class="detail">
-    <h1 class="detail-label">${restaurant.name}</h1>
-    <div id="detail" class="detail">
+const createRestaurantDetailTemplate = (restaurant) => {
+  return `
+  <div class="detail-container">
+    <div class="detail">
+      <h1 class="detail-title">${restaurant.name}</h1>
+      <img class="detail-picture" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Gambar Restoran ${restaurant.name}">
+
+      <h3>Detail Information</h3>
+      <div class="detail-information">
+        <div>
+          <label class="detail-information-label">Name:</label>
+          <p class="detail-information-text">${restaurant.name}</p>
+        </div>
+        <div>
+          <label class="detail-information-label">Address:</label>
+          <p class="detail-information-text">${restaurant.address}</p>
+        </div>
+        <div>
+          <label class="detail-information-label">City:</label>
+          <p class="detail-information-text">${restaurant.city}</p>
+        </div>
+        <div>
+          <label class="detail-information-label">Description:</label>
+          <p class="detail-information-text">${restaurant.description}</p>
+        </div>
+        <div>
+          <label class="detail-information-label">Food Menu:</label>
+          <p class="detail-information-text">${restaurant.description}</p>
+        </div>
+        <div>
+          <label class="detail-information-label">Drinks Menu:</label>
+          <p class="detail-information-text">${restaurant.description}</p>
+        </div>
+      </div>
     </div>
   </div>
-`;
+`
+};
 
 export {
   createRestaurantItemTemplate,
