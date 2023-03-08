@@ -36,20 +36,20 @@ const createFaqItemTemplate = (faq, index) => `
 `;
 
 const createRestaurantDetailTemplate = (restaurant) => {
-  let foods_menu = ``;
-  restaurant.menus.foods.forEach(food => {
-    foods_menu += `<li>${food.name}</li>`;
+  let foodsMenu = '';
+  restaurant.menus.foods.forEach((food) => {
+    foodsMenu += `<li>${food.name}</li>`;
   });
-  foods_menu = `<ul class='detail-information-menu'>${foods_menu}</ul>`;
+  foodsMenu = `<ul class='detail-information-menu'>${foodsMenu}</ul>`;
 
-  let drinks_menu = ``;
-  restaurant.menus.drinks.forEach(drink => {
-    drinks_menu += `<li>${drink.name}</li>`;
+  let drinksMenu = '';
+  restaurant.menus.drinks.forEach((drink) => {
+    drinksMenu += `<li>${drink.name}</li>`;
   });
-  drinks_menu = `<ul class='detail-information-menu'>${drinks_menu}</ul>`;
+  drinksMenu = `<ul class='detail-information-menu'>${drinksMenu}</ul>`;
 
-  let reviews = ``;
-  restaurant.customerReviews.forEach(review => {
+  let reviews = '';
+  restaurant.customerReviews.forEach((review) => {
     reviews += `
       <div class="review-item">
         <label class="review-item-label">${review.name} on ${review.date}</label>
@@ -58,47 +58,47 @@ const createRestaurantDetailTemplate = (restaurant) => {
     `;
   });
   reviews = `<div class="review-list">${reviews}</div>`;
-  
-  return `
-  <div class="detail-container">
-    <div class="detail">
-      <h1 class="detail-title">${restaurant.name}</h1>
-      <img class="detail-picture" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Gambar Restoran ${restaurant.name}">
 
-      <h3>Detail Information</h3>
-      <div class="detail-information">
-        <div>
-          <label class="detail-information-label">Name:</label>
-          <p class="detail-information-text">${restaurant.name}</p>
-        </div>
-        <div>
-          <label class="detail-information-label">Address:</label>
-          <p class="detail-information-text">${restaurant.address}</p>
-        </div>
-        <div>
-          <label class="detail-information-label">City:</label>
-          <p class="detail-information-text">${restaurant.city}</p>
-        </div>
-        <div>
-          <label class="detail-information-label">Description:</label>
-          <p class="detail-information-text">${restaurant.description}</p>
-        </div>
-        <div>
-          <label class="detail-information-label">Foods Menu:</label>
-          ${foods_menu}
-        </div>
-        <div>
-          <label class="detail-information-label">Drinks Menu:</label>
-          ${drinks_menu}
+  return `
+    <div class="detail-container">
+      <div class="detail">
+        <h1 class="detail-title">${restaurant.name}</h1>
+        <img class="detail-picture" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Gambar Restoran ${restaurant.name}">
+
+        <h3>Detail Information</h3>
+        <div class="detail-information">
+          <div>
+            <label class="detail-information-label">Name:</label>
+            <p class="detail-information-text">${restaurant.name}</p>
+          </div>
+          <div>
+            <label class="detail-information-label">Address:</label>
+            <p class="detail-information-text">${restaurant.address}</p>
+          </div>
+          <div>
+            <label class="detail-information-label">City:</label>
+            <p class="detail-information-text">${restaurant.city}</p>
+          </div>
+          <div>
+            <label class="detail-information-label">Description:</label>
+            <p class="detail-information-text">${restaurant.description}</p>
+          </div>
+          <div>
+            <label class="detail-information-label">Foods Menu:</label>
+            ${foodsMenu}
+          </div>
+          <div>
+            <label class="detail-information-label">Drinks Menu:</label>
+            ${drinksMenu}
+          </div>
         </div>
       </div>
+      <div class="review">
+        <h1 class="review-title">Customer Reviews</h1>
+        ${reviews}
+      </div>
     </div>
-    <div class="review">
-      <h1 class="review-title">Customer Reviews</h1>
-      ${reviews}
-    </div>
-  </div>
-`
+  `;
 };
 
 const createLikeButtonTemplate = () => `

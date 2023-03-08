@@ -1,4 +1,5 @@
 import RestaurantApiSource from '../../data/restaurant-api-source';
+import data from '../../../DATA.json';
 import { createRestaurantItemTemplate, createFavoriteItemTemplate, createFaqItemTemplate } from '../templates/template-creator';
 
 const NowPlaying = {
@@ -41,30 +42,29 @@ const NowPlaying = {
     const favoritesContainer = document.querySelector('#favorites');
     favoritesContainer.innerHTML = createFavoriteItemTemplate(restaurants[0]);
 
-    const data = require('../../../DATA.json');
     const faqsContainer = document.querySelector('#faqs');
-    let faq_list = '';
+    let faqList = '';
     data.faqs.forEach((faq, index) => {
-      faq_list += createFaqItemTemplate(faq, index);
+      faqList += createFaqItemTemplate(faq, index);
     });
-    faqsContainer.innerHTML = faq_list;
+    faqsContainer.innerHTML = faqList;
 
     const triggers = Array.from(document.querySelectorAll('[data-toggle="collapse"]'));
-    triggers.forEach((element, index) => {
+    triggers.forEach((element) => {
       element.addEventListener('click', () => {
-        const target_close = Array.from(document.querySelectorAll('[data-collapse]'));
+        const targetClose = Array.from(document.querySelectorAll('[data-collapse]'));
         const selector = element.getAttribute('data-target');
         const targets = Array.from(document.querySelectorAll(`[data-collapse="${selector}"]`));
-  
-        target_close.forEach(target => {
-          if(!targets.includes(target)){
-            target.classList['remove']('show');
+
+        targetClose.forEach((target) => {
+          if (!targets.includes(target)) {
+            target.classList.remove('show');
           }
         });
-        targets.forEach(target => {
-          target.classList['toggle']('show');
+        targets.forEach((target) => {
+          target.classList.toggle('show');
         });
-      })
+      });
     });
   },
 };

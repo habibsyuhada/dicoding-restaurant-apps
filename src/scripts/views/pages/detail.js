@@ -21,7 +21,6 @@ const Detail = {
     const restaurant = await RestaurantApiSource.detailRestaurant(url.id);
 
     const restaurantContainer = document.querySelector('.latest');
-    console.log(restaurant);
     restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
 
     LikeButtonInitiator.init({
