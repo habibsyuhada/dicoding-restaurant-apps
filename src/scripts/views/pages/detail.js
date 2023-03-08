@@ -1,7 +1,7 @@
 import UrlParser from '../../routes/url-parser';
 import RestaurantApiSource from '../../data/restaurant-api-source';
 import { createRestaurantDetailTemplate } from '../templates/template-creator';
-// import LikeButtonInitiator from '../../utils/like-button-initiator';
+import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 const Detail = {
   async render() {
@@ -24,16 +24,17 @@ const Detail = {
     console.log(restaurant);
     restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
 
-    // LikeButtonInitiator.init({
-    //   likeButtonContainer: document.querySelector('#likeButtonContainer'),
-    //   restaurant: {
-    //     id: restaurant.id,
-    //     // title: restaurant.title,
-    //     // overview: restaurant.overview,
-    //     // backdrop_path: restaurant.backdrop_path,
-    //     // vote_average: restaurant.vote_average,
-    //   },
-    // });
+    LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      restaurant: {
+        id: restaurant.id,
+        name: restaurant.name,
+        city: restaurant.city,
+        pictureId: restaurant.pictureId,
+        rating: restaurant.rating,
+        description: restaurant.description,
+      },
+    });
   },
 };
 

@@ -368,6 +368,7 @@ main{
         width: 100%;
         max-height: 40vh;
         object-fit: cover;
+        border-radius: 5px;
       }
       .detail-information{
         display: grid;
@@ -381,10 +382,68 @@ main{
         }
         .detail-information-text{
           margin-top: 0;
+          text-align: justify;
+        }
+        .detail-information-menu{
+          margin-top: 0;
+          padding-inline-start: 30px;
+        }
+      }
+    }
+
+    .review{
+      position: relative;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      width: 100%;
+      border-radius: 5px;
+      overflow: hidden;
+      background-color: $orange;
+      color: $white;
+      padding: 30px;
+      
+      .review-title{
+        text-align: center;
+      }
+
+      .review-list{
+        border-top: 1px solid $white;
+        
+        .review-item{
+          font-size: 80%;
+          border-bottom: 1px solid $white;
+          padding: 10px;
+          font-style: italic;
+          text-align: justify;
+
+          .review-item-label{
+            font-weight: bold;
+          }
+          .review-information-text{
+            margin: 0;
+          }
         }
       }
     }
   }
+}
+
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
+  
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+  
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
 }
 
 footer{

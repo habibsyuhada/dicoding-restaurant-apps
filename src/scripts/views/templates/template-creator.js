@@ -36,6 +36,29 @@ const createFaqItemTemplate = (faq, index) => `
 `;
 
 const createRestaurantDetailTemplate = (restaurant) => {
+  let foods_menu = ``;
+  restaurant.menus.foods.forEach(food => {
+    foods_menu += `<li>${food.name}</li>`;
+  });
+  foods_menu = `<ul class='detail-information-menu'>${foods_menu}</ul>`;
+
+  let drinks_menu = ``;
+  restaurant.menus.drinks.forEach(drink => {
+    drinks_menu += `<li>${drink.name}</li>`;
+  });
+  drinks_menu = `<ul class='detail-information-menu'>${drinks_menu}</ul>`;
+
+  let reviews = ``;
+  restaurant.customerReviews.forEach(review => {
+    reviews += `
+      <div class="review-item">
+        <label class="review-item-label">${review.name} on ${review.date}</label>
+        <p class="review-information-text">${review.review}</p>
+      </div>
+    `;
+  });
+  reviews = `<div class="review-list">${reviews}</div>`;
+  
   return `
   <div class="detail-container">
     <div class="detail">
@@ -61,22 +84,40 @@ const createRestaurantDetailTemplate = (restaurant) => {
           <p class="detail-information-text">${restaurant.description}</p>
         </div>
         <div>
-          <label class="detail-information-label">Food Menu:</label>
-          <p class="detail-information-text">${restaurant.description}</p>
+          <label class="detail-information-label">Foods Menu:</label>
+          ${foods_menu}
         </div>
         <div>
           <label class="detail-information-label">Drinks Menu:</label>
-          <p class="detail-information-text">${restaurant.description}</p>
+          ${drinks_menu}
         </div>
       </div>
+    </div>
+    <div class="review">
+      <h1 class="review-title">Customer Reviews</h1>
+      ${reviews}
     </div>
   </div>
 `
 };
+
+const createLikeButtonTemplate = () => `
+  <button aria-label="like this movie" id="likeButton" class="like">
+    <i class="fa-regular fa-heart"></i>
+  </button>
+`;
+
+const createLikedButtonTemplate = () => `
+  <button aria-label="unlike this movie" id="likeButton" class="like">
+    <i class="fa-solid fa-heart"></i>
+  </button>
+`;
 
 export {
   createRestaurantItemTemplate,
   createFavoriteItemTemplate,
   createFaqItemTemplate,
   createRestaurantDetailTemplate,
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
 };
