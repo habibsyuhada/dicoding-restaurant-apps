@@ -1,9 +1,9 @@
 {
-  "id": "movie-catalogue-lite-pwa-1",
+  "id": "restaurant-finder",
   "start_url": "./index.html",
-  "name": "Movie Catalogue Lite",
+  "name": "Restaurant Finder Lite",
   "short_name": "Movie Lite",
-  "description": "Free Catalogue Movie for you",
+  "description": "Free Catalogue Restaurant for you",
   "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#D84315",

@@ -2,6 +2,7 @@ import 'regenerator-runtime';
 import '../styles/main.scss';
 import '../DATA.json';
 import App from './views/app';
+import swRegister from './utils/sw-register';
 
 const menu = document.querySelector('#menu');
 const drawer = document.querySelector('#drawer');
@@ -23,4 +24,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', async () => {
   app.renderPage();
+  swRegister();
 });
