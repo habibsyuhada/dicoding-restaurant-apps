@@ -384,6 +384,11 @@ main{
           margin-top: 0;
           text-align: justify;
         }
+        .detail-information-description{
+          grid-column-start: 1;
+          grid-column-end: 3;
+          grid-row-start: 3;
+        }
         .detail-information-menu{
           margin-top: 0;
           padding-inline-start: 30px;
@@ -404,7 +409,6 @@ main{
       .review-title{
         text-align: center;
       }
-
       .review-list{
         border-top: 1px solid $white;
         
@@ -420,6 +424,60 @@ main{
           }
           .review-information-text{
             margin: 0;
+          }
+        }
+      }
+      .review-input{
+
+        .form-group{
+          margin-bottom: 1rem;
+
+          label{
+            font-size: .9rem;
+            font-weight: bold;
+          }
+          .form-control{
+            width: 100%;
+            padding: 0.75rem;
+            line-height: 1.5;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+            &:focus{
+              border-color: #fff;
+              color: #495057;
+              background-color: #fff;
+              outline: 0;
+              box-shadow: 0 0 0 0.25rem rgb(255 255 255 / 25%);
+            }
+          }
+        }
+        .btn-review{
+          display: inline-block;
+          cursor: pointer;
+          font-weight: 400;
+          text-align: center;
+          white-space: nowrap;
+          vertical-align: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          border: 1px solid transparent;
+          padding: 0.6rem 0.75rem;
+          font-size: 1rem;
+          line-height: 1.5;
+          border-radius: 0.25rem;
+          transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+          color: $white;
+          background-color: $black;
+          border-color: $black;
+
+          &:hover, &:focus, &:active{
+            background-color: $white;
+            border-color: $white;
+            color: $black;
           }
         }
       }

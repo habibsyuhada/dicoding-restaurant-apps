@@ -80,6 +80,10 @@ const createRestaurantDetailTemplate = (restaurant) => {
             <p class="detail-information-text">${restaurant.city}</p>
           </div>
           <div>
+            <label class="detail-information-label">Rating:</label>
+            <p class="detail-information-text">${restaurant.rating}</p>
+          </div>
+          <div class="detail-information-description">
             <label class="detail-information-label">Description:</label>
             <p class="detail-information-text">${restaurant.description}</p>
           </div>
@@ -96,6 +100,20 @@ const createRestaurantDetailTemplate = (restaurant) => {
       <div class="review">
         <h1 class="review-title">Customer Reviews</h1>
         ${reviews}
+        <br>
+        <div class="review-input">
+          <div class="form-group">
+            <label>Name :</label>
+            <input type="text" name="name" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Review :</label>
+            <textarea name="review" class="form-control"></textarea>
+          </div>
+          <div class="form-group">
+            <button class="btn-review" id="btn-review"><i class="fas fa-check"></i> Submit New Review</button>
+          </div>
+        </div>
       </div>
     </div>
   `;

@@ -34,6 +34,24 @@ const Detail = {
         description: restaurant.description,
       },
     });
+
+    const btnReview = document.querySelector('#btn-review');
+
+    btnReview.addEventListener('click', async () => {
+      const nameInput = document.querySelector('input[name=name]');
+      const reviewInput = document.querySelector('textarea[name=review]');
+
+      if (nameInput.value !== '' && reviewInput.value !== '') {
+        const reviews = await RestaurantApiSource.addReviewRestaurant({
+          id: url.id,
+          name: nameInput.value,
+          review: reviewInput.value,
+        });
+      }
+
+      nameInput.value = '';
+      reviewInput.value = '';
+    });
   },
 };
 
