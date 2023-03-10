@@ -1,6 +1,7 @@
 import 'regenerator-runtime';
 import '../styles/main.scss';
 import '../DATA.json';
+import './components/loading-indicator';
 import App from './views/app';
 import swRegister from './utils/sw-register';
 
@@ -25,4 +26,5 @@ window.addEventListener('hashchange', () => {
 window.addEventListener('load', async () => {
   app.renderPage();
   swRegister();
+  document.querySelector('#loader').remove();
 });

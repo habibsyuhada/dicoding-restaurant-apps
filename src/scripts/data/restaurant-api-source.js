@@ -23,7 +23,7 @@ class RestaurantApiSource {
       body: JSON.stringify(data),
     });
     const responseJson = await response.json();
-    return responseJson.restaurant;
+    return responseJson.customerReviews;
   }
 }
 

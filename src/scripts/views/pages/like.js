@@ -1,26 +1,20 @@
 import FavoriteRestaurantIdb from '../../data/restaurant-idb';
-import { createRestaurantItemTemplate } from '../templates/template-creator';
+import '../../components/restaurant-latest';
 
 const NowPlaying = {
   async render() {
     return `
       <section class="content">
-        <div class="latest">
-          <h1 class="latest-label">FAVORITE</h1>
-          <div id="posts" class="posts">
-          </div>
-        </div>
+        <restaurant-latest><loading-indicator></loading-indicator></restaurant-latest>
       </section>
     `;
   },
 
   async afterRender() {
     const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
-    const latestContainer = document.querySelector('#posts');
 
-    restaurants.forEach((restaurant) => {
-      latestContainer.innerHTML += createRestaurantItemTemplate(restaurant);
-    });
+    const restaurantPosts = document.querySelector('restaurant-latest');
+    restaurantPosts.restaurants = restaurants;
   },
 };
 

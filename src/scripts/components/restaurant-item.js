@@ -7,7 +7,7 @@ class RestaurantItem extends HTMLElement {
   }
 
   render() {
-    const htmlRestaurantPoster = `
+    const htmlRestaurantItem = `
       <div class="post-item">
         <img class="post-item-thumbnail" src="${CONFIG.BASE_IMAGE_URL + this.d_restaurant.pictureId}" alt="Gambar Restoran ${this.d_restaurant.name}">
         <div class="post-item-city">${this.d_restaurant.city}</div>
@@ -18,7 +18,7 @@ class RestaurantItem extends HTMLElement {
         </div>
       </div>
     `;
-    this.innerHTML = htmlRestaurantPoster;
+    this.innerHTML = htmlRestaurantItem;
   }
 }
 

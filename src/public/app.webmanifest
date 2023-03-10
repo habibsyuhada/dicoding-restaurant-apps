@@ -2,12 +2,18 @@
   "id": "restaurant-finder",
   "start_url": "./index.html",
   "name": "Restaurant Finder Lite",
-  "short_name": "Movie Lite",
+  "short_name": "Restaurant Finder",
   "description": "Free Catalogue Restaurant for you",
   "display": "standalone",
   "background_color": "#FFFFFF",
-  "theme_color": "#D84315",
+  "theme_color": "#F25900",
   "icons": [
+    {
+      "src": "/images/icons/icon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
+    },
     {
       "src": "/images/icons/icon-72x72.png",
       "sizes": "72x72",
