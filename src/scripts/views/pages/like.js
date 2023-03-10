@@ -1,11 +1,11 @@
 import FavoriteRestaurantIdb from '../../data/restaurant-idb';
-import '../../components/restaurant-latest';
+import '../../components/restaurant-like';
 
 const NowPlaying = {
   async render() {
     return `
       <section class="content">
-        <restaurant-latest><loading-indicator></loading-indicator></restaurant-latest>
+        <restaurant-like><loading-indicator></loading-indicator></restaurant-like>
       </section>
     `;
   },
@@ -13,7 +13,7 @@ const NowPlaying = {
   async afterRender() {
     const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
 
-    const restaurantPosts = document.querySelector('restaurant-latest');
+    const restaurantPosts = document.querySelector('restaurant-like');
     restaurantPosts.restaurants = restaurants;
   },
 };
