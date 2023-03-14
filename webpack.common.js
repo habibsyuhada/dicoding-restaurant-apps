@@ -23,7 +23,20 @@ module.exports = {
             loader: 'style-loader',
           },
           {
-            loader: 'css-loader',
+            loader: 'css-loader', // translates CSS into CommonJS
+            options: {
+              importLoaders: 1
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: {
+                  'cssnano': {}
+                },
+              },
+            },
           },
           {
             loader: 'sass-loader',

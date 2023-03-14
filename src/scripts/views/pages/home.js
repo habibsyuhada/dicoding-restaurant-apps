@@ -9,11 +9,11 @@ const NowPlaying = {
     return `
       <div class="hero">
         <picture>
-          <source media="(max-width: 650px)" srcset="../images/heros/hero-image-small.jpg" type="image/jpeg">
-          <source media="(min-width: 650px)" srcset="../images/heros/hero-image-medium.jpg" type="image/jpeg">
-          <source media="(min-width: 1200px)" srcset="../images/heros/hero-image-large.jpg" type="image/jpeg">
+          <source media="(max-width: 650px)" srcset="images/heros/hero-image-small.jpg" type="image/jpeg">
+          <source media="(min-width: 650px)" srcset="images/heros/hero-image-medium.jpg" type="image/jpeg">
+          <source media="(min-width: 1200px)" srcset="images/heros/hero-image-large.jpg" type="image/jpeg">
           <img
-            src="../images/heros/hero-image-large.jpg" 
+            src="images/heros/hero-image.jpg" 
             alt=""
           />
         </picture>
