@@ -8,7 +8,15 @@ const NowPlaying = {
   async render() {
     return `
       <div class="hero">
-        <img src="images/heros/hero-image_2.jpg" alt="">
+        <picture>
+          <source media="(max-width: 650px)" srcset="../images/heros/hero-image-small.jpg" type="image/jpeg">
+          <source media="(min-width: 650px)" srcset="../images/heros/hero-image-medium.jpg" type="image/jpeg">
+          <source media="(min-width: 1200px)" srcset="../images/heros/hero-image-large.jpg" type="image/jpeg">
+          <img
+            src="../images/heros/hero-image-large.jpg" 
+            alt=""
+          />
+        </picture>
         <div class="hero-text"><h2>RESTAURANT FINDER</h2></div>
       </div>
       <section class="content">

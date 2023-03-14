@@ -12,7 +12,7 @@ class RestaurantFavorite extends HTMLElement {
         <h1 class="latest-label">FAVORITE</h1>
         <div id="favorites" class="favorites">
           <div class="favorite-item">
-            <img class="favorite-item-thumbnail" src="${CONFIG.BASE_IMAGE_URL + this.d_restaurant.pictureId}" alt="Gambar Restoran ${this.d_restaurant.name}">
+            <img class="lazyload favorite-item-thumbnail" src="${CONFIG.BASE_IMAGE_URL + this.d_restaurant.pictureId}" alt="Gambar Restoran ${this.d_restaurant.name}">
             <div class="favorite-item-city">${this.d_restaurant.city}</div>
             <div class="favorite-item-content">
               <h1 class="favorite-item-title"><a href="/#/detail/${this.d_restaurant.id}">${this.d_restaurant.name}</a></h1>

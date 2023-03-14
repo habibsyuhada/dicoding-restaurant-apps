@@ -17,7 +17,7 @@ class RestaurantDetail extends HTMLElement {
           <div class="detail-container">
             <div class="detail">
               <h1 class="detail-title">${this.d_restaurant.name}</h1>
-              <img class="detail-picture" crossorigin="anonymous" src="${CONFIG.BASE_IMAGE_URL + this.d_restaurant.pictureId}" alt="Gambar Restoran ${this.d_restaurant.name}">
+              <img class="lazyload detail-picture" crossorigin="anonymous" src="${CONFIG.BASE_IMAGE_URL + this.d_restaurant.pictureId}" alt="Gambar Restoran ${this.d_restaurant.name}">
       
               <h3>Detail Information</h3>
               <div class="detail-information">

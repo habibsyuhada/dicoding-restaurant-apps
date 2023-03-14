@@ -9,7 +9,7 @@ class RestaurantItem extends HTMLElement {
   render() {
     const htmlRestaurantItem = `
       <div class="post-item">
-        <img class="post-item-thumbnail" crossorigin="anonymous" src="${CONFIG.BASE_IMAGE_URL + this.d_restaurant.pictureId}" alt="Gambar Restoran ${this.d_restaurant.name}">
+        <img class="lazyload post-item-thumbnail" crossorigin="anonymous" src="${CONFIG.BASE_IMAGE_URL + this.d_restaurant.pictureId}" alt="Gambar Restoran ${this.d_restaurant.name}">
         <div class="post-item-city">${this.d_restaurant.city}</div>
         <div class="post-item-content">
           <h1 class="post-item-title"><a href="/#/detail/${this.d_restaurant.id}">${this.d_restaurant.name}</a></h1>
