@@ -25,15 +25,15 @@ module.exports = {
           {
             loader: 'css-loader', // translates CSS into CommonJS
             options: {
-              importLoaders: 1
-            }
+              importLoaders: 1,
+            },
           },
           {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
                 plugins: {
-                  'cssnano': {}
+                  cssnano: {}
                 },
               },
             },
