@@ -6,7 +6,7 @@ class RestaurantLatest extends HTMLElement {
     super();
 
     let skeleton = '';
-    for (let i = 0; i < 20; i + 1) {
+    for (let i = 0; i < 20; i++) {
       const restaurantItemSkeleton = document.createElement('restaurant-item');
       restaurantItemSkeleton.showSkeleton = true;
       skeleton += restaurantItemSkeleton.outerHTML;
