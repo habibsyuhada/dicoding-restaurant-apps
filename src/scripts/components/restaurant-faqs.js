@@ -4,7 +4,7 @@ import data from '../../DATA.json';
 class RestaurantFaqs extends HTMLElement {
   constructor() {
     super();
-    
+
     const htmlRestaurantFaqs = `
       <div class="latest">
         <h1 class="latest-label">FREQUENTLY ASKED QUESTIONS</h1>

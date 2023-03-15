@@ -5,7 +5,13 @@ class RestaurantLatest extends HTMLElement {
   constructor() {
     super();
 
-    const skeleton = this.renderSkeleton();
+    let skeleton = '';
+    for (let i = 0; i < 20; i + 1) {
+      const restaurantItemSkeleton = document.createElement('restaurant-item');
+      restaurantItemSkeleton.showSkeleton = true;
+      skeleton += restaurantItemSkeleton.outerHTML;
+    }
+
     this.d_htmlRestaurantLatest = `
       <div class="latest">
         <h1 class="latest-label">LATEST</h1>
@@ -22,23 +28,12 @@ class RestaurantLatest extends HTMLElement {
     this.render();
   }
 
-  renderSkeleton(){
-    let skeletonHtml = '';
-    for (let i = 0; i < 20; i++) {
-      const restaurantItemSkeleton = document.createElement('restaurant-item');
-      restaurantItemSkeleton.showSkeleton = true;
-      skeletonHtml += restaurantItemSkeleton.outerHTML;
-    }
-    return skeletonHtml;
-  }
-
   render() {
     this.innerHTML = this.d_htmlRestaurantLatest;
 
-    const posts = this.querySelector('#posts');
-    let nodes = document.querySelectorAll("restaurant-item");
+    const nodes = document.querySelectorAll('restaurant-item');
     this.d_restaurants.forEach((item, key) => {
-      let el = nodes[key];
+      const el = nodes[key];
       el.restaurantskeleton = item;
     });
   }

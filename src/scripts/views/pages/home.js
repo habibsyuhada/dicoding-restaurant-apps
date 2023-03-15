@@ -1,5 +1,4 @@
 import RestaurantApiSource from '../../data/restaurant-api-source';
-import data from '../../../DATA.json';
 import '../../components/restaurant-latest';
 import '../../components/restaurant-favorite';
 import '../../components/restaurant-faqs';
@@ -10,10 +9,9 @@ const NowPlaying = {
       <div class="hero">
         <picture>
           <source media="(max-width: 650px)" srcset="images/heros/hero-image-small.jpg" type="image/jpeg">
-          <source media="(max-width: 1200px)" srcset="images/heros/hero-image-medium.jpg" type="image/jpeg">
-          <source media="(min-width: 1200px)" srcset="images/heros/hero-image-large.jpg" type="image/jpeg">
+          <source media="(max-width: 1000px)" srcset="images/heros/hero-image-medium.jpg" type="image/jpeg">
           <img
-            src="images/heros/hero-image.jpg" 
+            src="images/heros/hero-image-large.jpg" 
             alt=""
           />
         </picture>

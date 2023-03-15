@@ -1,6 +1,6 @@
 import 'regenerator-runtime';
-import "lazysizes";
-import "lazysizes/plugins/parent-fit/ls.parent-fit";
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import '../styles/main.scss';
 import '../DATA.json';
 import './components/loading-indicator';

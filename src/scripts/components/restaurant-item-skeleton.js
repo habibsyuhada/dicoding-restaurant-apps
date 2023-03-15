@@ -17,8 +17,8 @@ class RestaurantItemSkeleton extends HTMLElement {
     `;
   }
 
-  set show(toogle){
-    if(toogle){
+  set show(toogle) {
+    if (toogle) {
       this.innerHTML = this.d_innerHtml;
     }
   }

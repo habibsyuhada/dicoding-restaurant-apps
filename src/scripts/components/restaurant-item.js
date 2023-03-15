@@ -1,8 +1,8 @@
 import CONFIG from '../globals/config';
 
 class RestaurantItem extends HTMLElement {
-  set showSkeleton(toogle){
-    if(toogle){
+  set showSkeleton(toogle) {
+    if (toogle) {
       this.renderSkeleton();
     }
   }
