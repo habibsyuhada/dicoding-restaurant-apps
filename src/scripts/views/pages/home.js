@@ -10,7 +10,7 @@ const NowPlaying = {
       <div class="hero">
         <picture>
           <source media="(max-width: 650px)" srcset="images/heros/hero-image-small.jpg" type="image/jpeg">
-          <source media="(min-width: 650px)" srcset="images/heros/hero-image-medium.jpg" type="image/jpeg">
+          <source media="(max-width: 1200px)" srcset="images/heros/hero-image-medium.jpg" type="image/jpeg">
           <source media="(min-width: 1200px)" srcset="images/heros/hero-image-large.jpg" type="image/jpeg">
           <img
             src="images/heros/hero-image.jpg" 
@@ -20,9 +20,9 @@ const NowPlaying = {
         <div class="hero-text"><h2>RESTAURANT FINDER</h2></div>
       </div>
       <section class="content">
-        <restaurant-favorite><loading-indicator></loading-indicator></restaurant-favorite>
-        <restaurant-latest><loading-indicator></loading-indicator></restaurant-latest>
-        <restaurant-faqs><loading-indicator></loading-indicator></restaurant-faqs>
+        <restaurant-favorite></restaurant-favorite>
+        <restaurant-latest></restaurant-latest>
+        <restaurant-faqs></restaurant-faqs>
       </section>
     `;
   },
@@ -37,9 +37,6 @@ const NowPlaying = {
       const restaurantFavorite = document.querySelector('restaurant-favorite');
       const [foo] = restaurants;
       restaurantFavorite.restaurant = foo;
-
-      const restaurantFaqs = document.querySelector('restaurant-faqs');
-      restaurantFaqs.faqs = data.faqs;
     } catch (message) {
       alert(message);
     }

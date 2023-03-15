@@ -1,12 +1,10 @@
 import './restaurant-faq-item';
+import data from '../../DATA.json';
 
 class RestaurantFaqs extends HTMLElement {
-  set faqs(faqs) {
-    this.d_faqs = faqs;
-    this.render();
-  }
-
-  render() {
+  constructor() {
+    super();
+    
     const htmlRestaurantFaqs = `
       <div class="latest">
         <h1 class="latest-label">FREQUENTLY ASKED QUESTIONS</h1>
@@ -19,7 +17,7 @@ class RestaurantFaqs extends HTMLElement {
     this.innerHTML = htmlRestaurantFaqs;
 
     const posts = this.querySelector('#faqs');
-    this.d_faqs.forEach((item, index) => {
+    data.faqs.forEach((item, index) => {
       const restaurantFaqItem = document.createElement('restaurant-faq-item');
       restaurantFaqItem.faq = item;
       restaurantFaqItem.faqIndex = index;

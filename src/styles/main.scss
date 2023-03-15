@@ -1,6 +1,7 @@
 $orange: #F25900;
 $white: #FFFFFF;
 $gray: #F5F5F5;
+$dark-gray: #C3C3C3;
 $black: #343A40;
 
 *{
@@ -113,6 +114,7 @@ header{
     display: flex;
     width: 100%;
     height: 615px;
+    overflow: hidden;
   }
   @media screen and (max-width: 767px) {
     picture {
@@ -122,6 +124,7 @@ header{
   img {
     object-fit: cover;
     width: 100%;
+    height: auto;
     filter: brightness(50%);
   }
   .hero-text{
@@ -564,6 +567,11 @@ footer{
   @media screen and (min-width: 1200px) {
     grid-template-columns: repeat(6, 1fr);
   }
+}
+
+.skeleton-ui{
+  color: $dark-gray !important;
+  background-color: $dark-gray !important;
 }
 
 loading-indicator{

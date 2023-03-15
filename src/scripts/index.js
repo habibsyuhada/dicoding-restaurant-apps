@@ -28,5 +28,4 @@ window.addEventListener('hashchange', () => {
 window.addEventListener('load', async () => {
   app.renderPage();
   swRegister();
-  document.querySelector('#loader').remove();
 });
