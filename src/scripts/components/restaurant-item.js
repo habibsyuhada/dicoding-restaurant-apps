@@ -10,7 +10,7 @@ class RestaurantItem extends HTMLElement {
   renderSkeleton() {
     const htmlRestaurantItem = `
       <div class="post-item">
-        <img class="lazyload post-item-thumbnail" crossorigin="anonymous" src="images/skeleton-image.jpg" alt="Gambar Restoran">
+        <img class="lazyload post-item-thumbnail" crossorigin="anonymous" data-src="images/skeleton-image.jpg" alt="Gambar Restoran">
         <div class="post-item-city skeleton-ui">Loading</div>
         <div class="post-item-content">
           <h1 class="post-item-title skeleton-ui"><a href="#">Loading</a></h1>
@@ -30,7 +30,7 @@ class RestaurantItem extends HTMLElement {
   render() {
     const htmlRestaurantItem = `
       <div class="post-item">
-        <img class="lazyload post-item-thumbnail" crossorigin="anonymous" src="${CONFIG.BASE_IMAGE_URL + this.d_restaurant.pictureId}" alt="Gambar Restoran ${this.d_restaurant.name}">
+        <img class="lazyload post-item-thumbnail" crossorigin="anonymous" data-src="${CONFIG.BASE_IMAGE_URL + this.d_restaurant.pictureId}" alt="Gambar Restoran ${this.d_restaurant.name}">
         <div class="post-item-city">${this.d_restaurant.city}</div>
         <div class="post-item-content">
           <h1 class="post-item-title"><a href="#/detail/${this.d_restaurant.id}">${this.d_restaurant.name}</a></h1>
@@ -48,7 +48,8 @@ class RestaurantItem extends HTMLElement {
   }
 
   renderFromSkeleton() {
-    this.querySelector('.post-item-thumbnail').setAttribute('src', CONFIG.BASE_IMAGE_URL + this.d_restaurant.pictureId);
+    this.querySelector('.post-item-thumbnail').setAttribute('data-src', CONFIG.BASE_IMAGE_URL + this.d_restaurant.pictureId);
+    this.querySelector('.post-item-thumbnail').classList.add('lazyload');
     this.querySelector('.post-item-thumbnail').setAttribute('alt', `Gambar Restoran ${this.d_restaurant.name}`);
     this.querySelector('.post-item-city').innerHTML = this.d_restaurant.city;
     this.querySelector('.post-item-title a').innerHTML = this.d_restaurant.name;

@@ -8,7 +8,7 @@ class RestaurantFavorite extends HTMLElement {
         <h1 class="latest-label">FAVORITE</h1>
         <div id="favorites" class="favorites">
           <div class="favorite-item">
-            <img class="lazyload favorite-item-thumbnail" crossorigin="anonymous" src="images/skeleton-image.jpg" alt="Gambar Restoran">
+            <img class="lazyload favorite-item-thumbnail" crossorigin="anonymous" data-src="images/skeleton-image.jpg" alt="Gambar Restoran">
             <div class="favorite-item-city skeleton-ui">Loading</div>
             <div class="favorite-item-content">
               <h1 class="favorite-item-title skeleton-ui"><a href="#">Loading</a></h1>
@@ -28,7 +28,8 @@ class RestaurantFavorite extends HTMLElement {
   }
 
   render() {
-    this.querySelector('.favorite-item-thumbnail').setAttribute('src', CONFIG.BASE_IMAGE_URL + this.d_restaurant.pictureId);
+    this.querySelector('.favorite-item-thumbnail').setAttribute('data-src', CONFIG.BASE_IMAGE_URL + this.d_restaurant.pictureId);
+    this.querySelector('.favorite-item-thumbnail').classList.add('lazyload');
     this.querySelector('.favorite-item-thumbnail').setAttribute('alt', `Gambar Restoran ${this.d_restaurant.name}`);
     this.querySelector('.favorite-item-city').innerHTML = this.d_restaurant.city;
     this.querySelector('.favorite-item-title a').innerHTML = this.d_restaurant.name;

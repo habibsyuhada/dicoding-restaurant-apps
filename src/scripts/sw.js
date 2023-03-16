@@ -3,7 +3,10 @@ import CacheHelper from './utils/cache-helper';
 
 const assetsToCache = [
   './',
-  './images/heros/hero-image_2.jpg',
+  './images/heros/hero-image.jpg',
+  './images/heros/hero-image-large.jpg',
+  './images/heros/hero-image-medium.jpg',
+  './images/heros/hero-image-small.jpg',
   './images/icons/icon-48x48.png',
   './images/icons/icon-72x72.png',
   './images/icons/icon-96x96.png',

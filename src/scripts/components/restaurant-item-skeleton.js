@@ -6,7 +6,7 @@ class RestaurantItemSkeleton extends HTMLElement {
 
     this.d_innerHtml = `
       <div class="post-item">
-        <img class="lazyload post-item-thumbnail" crossorigin="anonymous" src="images/skeleton-image.jpg" alt="Gambar Restoran">
+        <img class="lazyload post-item-thumbnail" crossorigin="anonymous" data-src="images/skeleton-image.jpg" alt="Gambar Restoran">
         <div class="post-item-city skeleton-ui">Loading</div>
         <div class="post-item-content">
           <h1 class="post-item-title skeleton-ui"><a href="#">Loading</a></h1>

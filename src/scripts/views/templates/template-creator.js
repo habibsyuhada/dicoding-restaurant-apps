@@ -2,7 +2,7 @@ import CONFIG from '../../globals/config';
 
 const createRestaurantItemTemplate = (restaurant) => `
   <article class="post-item">
-    <img class="lazyload post-item-thumbnail" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Gambar Restoran ${restaurant.name}">
+    <img class="lazyload post-item-thumbnail" data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Gambar Restoran ${restaurant.name}">
     <div class="post-item-city">${restaurant.city}</div>
     <div class="post-item-content">
       <h1 class="post-item-title"><a href="/#/detail/${restaurant.id}">${restaurant.name}</a></h1>
@@ -14,7 +14,7 @@ const createRestaurantItemTemplate = (restaurant) => `
 
 const createFavoriteItemTemplate = (restaurant) => `
   <article class="favorite-item">
-    <img class="lazyload favorite-item-thumbnail" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Gambar Restoran ${restaurant.name}">
+    <img class="lazyload favorite-item-thumbnail" data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Gambar Restoran ${restaurant.name}">
     <div class="favorite-item-city">${restaurant.city}</div>
     <div class="favorite-item-content">
       <h1 class="favorite-item-title"><a href="/#/detail/${restaurant.id}">${restaurant.name}</a></h1>
@@ -63,7 +63,7 @@ const createRestaurantDetailTemplate = (restaurant) => {
     <div class="detail-container">
       <div class="detail">
         <h1 class="detail-title">${restaurant.name}</h1>
-        <img class="lazyload detail-picture" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Gambar Restoran ${restaurant.name}">
+        <img class="lazyload detail-picture" data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Gambar Restoran ${restaurant.name}">
 
         <h3>Detail Information</h3>
         <div class="detail-information">
